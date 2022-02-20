@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <div class="main">
+    <div class="menu-card">
+      <div class="menu-head">
+        <span>Rock</span>
+        <span>Paper</span>
+        <span>Scissors</span>
+      </div>
+      <div class="scorecard">
+        <span>Score</span>
+        <span id="score-display">0</span>
+      </div>
+    </div>
+    <div class="main-game">
+      <div>
+        <span id="rock"><img src="images/icon-rock.svg"></span>
+        <span id="paper"><img src="images/icon-paper.svg"></span>
+      </div>
+      <div>
+        <span id="scissors"><img src="images/icon-scissors.svg"></span>
+      </div>
+    </div>
+  </div>
+  <div class="game-results inactive">
+    <div>
+      <p>You Picked</p>
+      <span id="player" class=""><img id="player-output" src=""></span>
+    </div>
+    <div>
+      <p id="result-display">You Won</p>
+      <p id="restart">Play Again</p>
+    </div>
+    <div>
+      <p>The House Picked</p>
+      <span id="bot" class=""><img id="bot-output" src=""></span>
+    </div>
+  </div>
+  <div class="rules">
+    Rules
+  </div>
+  <div class="rule-modal inactive">
+    <p>Rules</p>
+    <img id="close-btn" src="images/icon-close.svg">
+    <img src="images/image-rules.svg"/>
+  </div>
+  <footer>Inspired by FrontendMentor.io<br>Made with 🖤 by Siddharth</footer>
+  <script src="index.js"></script>
+</body>
+</html>
