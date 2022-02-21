@@ -106,10 +106,21 @@ footer{
     cursor: default;
     margin: 0px 30px;
 }
-.rule-modal,
+.rule-modal{
+    position: absolute;
+    margin: 0 auto;
+    max-width: 90%;
+    top: 20%;
+    left: 22%;
+    background-color: white;
+    color: rgb(117, 117, 117);
+    padding: 0.5em 2em;
+    border-radius: 5px;
+}
 .luck-modal{
     position: absolute;
     margin: 0 auto;
+    max-width: 90%;
     top: 40%;
     left: 40%;
     background-color: white;
