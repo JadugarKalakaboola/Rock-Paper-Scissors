@@ -84,9 +84,6 @@ footer{
 .inactive{
     display: none;
 }
-.active{
-    display: block;
-}
 
 .win img{
     border-color: rgb(115, 231, 115);
@@ -109,10 +106,12 @@ footer{
     cursor: default;
     margin: 0px 30px;
 }
-.rule-modal{
+.rule-modal,
+.luck-modal{
     position: absolute;
-    top: 25%;
-    left: 35%;
+    margin: 0 auto;
+    top: 40%;
+    left: 40%;
     background-color: white;
     color: rgb(117, 117, 117);
     padding: 0.5em 2em;
@@ -129,10 +128,66 @@ footer{
     font-size: 3rem;
 }
 #restart{
+    background-color: rgb(17, 17, 17);
+    padding: 0.5em 1.5em;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: rgb(224, 222, 222);
+    cursor: pointer;
+}
+#next-round{
     background-color: white;
     padding: 0.5em 1.5em;
     font-size: 1rem;
     border-radius: 4px;
     color: rgb(117, 117, 117);
     cursor: pointer;
+}
+@media screen and (max-width: 900px){
+    body{
+        font-size: 16px;
+    }
+    footer{
+        position: relative;
+        width: 100%;
+        left: 1%;
+        bottom: 1%;
+    }
+    .rules{
+        position: relative;
+        width: 30%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .game-results{
+        max-width: 90%;
+        display: flex;
+        font-size: 2rem;
+        justify-content: center;
+        padding: 180px 0;
+    }
+    .game-results p{
+        font-size: 1.4rem;
+    }
+    #result-display{
+        font-size: 2rem;
+    }
+    .game-results img{
+        width: 60px;
+        height: 60px;
+    }
+    .rule-modal{
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        max-width: 90%;
+    }
+    .inactive{
+        display: none;
+    }
+    .luck-modal{
+        top: 35%;
+        left: 30%;
+        max-width: 90%;
+    }
 }

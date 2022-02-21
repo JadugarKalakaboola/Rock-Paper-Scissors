@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/hero.jfif">
   <link rel="stylesheet" href="index.css">
   <title>Rock Paper Scissors</title>
 </head>
@@ -34,9 +35,9 @@
       <p>You Picked</p>
       <span id="player" class=""><img id="player-output" src=""></span>
     </div>
-    <div>
+    <div class="results-text">
       <p id="result-display">You Won</p>
-      <p id="restart">Play Again</p>
+      <p id="next-round">Next Round</p>
     </div>
     <div>
       <p>The House Picked</p>
@@ -48,8 +49,15 @@
   </div>
   <div class="rule-modal inactive">
     <p>Rules</p>
+    <p>Reach the score of 7 and we will tell you your todays luck!!</p>
     <img id="close-btn" src="images/icon-close.svg">
     <img src="images/image-rules.svg"/>
+  </div>
+  <div class="luck-modal inactive">
+    <p>Luck Meter</p>
+    <meter id="luck-meter" value="0" min="0" low="4" high="8" max="10"></meter>
+    <p id="luck-status"></p>
+    <p id="restart">Play Again</p>
   </div>
   <footer>Inspired by FrontendMentor.io<br>Made with 🖤 by Siddharth</footer>
   <script src="index.js"></script>

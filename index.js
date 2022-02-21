@@ -32,6 +32,39 @@ const scissorsBtn = document.getElementById("scissors")
 let playerHand;
 let homeHand;
 let j;
+let rounds = 0
+let score = 0
+
+function checkScore(){
+    if(score === 5){
+        if(rounds === score){
+            console.log(rounds)
+            console.log(score)
+            document.getElementById("luck-meter").value = 10
+        } else if(rounds - score >= 1 && rounds - score <= 3){
+            console.log(rounds)
+            console.log(score)
+            document.getElementById("luck-meter").value = 9
+            document.getElementById("luck-status").textContent = `Your luck is ${document.getElementById("luck-meter").value * 10}%`
+        } else if(rounds - score >= 4 && rounds - score <= 7){
+            console.log(rounds)
+            console.log(score)
+            document.getElementById("luck-meter").value = 8
+            document.getElementById("luck-status").textContent = `Your luck is ${document.getElementById("luck-meter").value * 10}%`
+        } else if(rounds - score >= 7 && rounds - score <= 9){
+            console.log(rounds)
+            console.log(score)
+            document.getElementById("luck-meter").value = 7
+            document.getElementById("luck-status").textContent = `Your luck is ${document.getElementById("luck-meter").value * 10}%`
+        } else {
+            console.log(rounds)
+            console.log(score)
+            document.getElementById("luck-meter").value = 5
+            document.getElementById("luck-status").textContent = `Your luck is ${document.getElementById("luck-meter").value * 10}%`
+        }
+        document.querySelector(".luck-modal").classList.remove("inactive")
+    }
+}
 
 paperBtn.addEventListener("click", function(){
     playerHand = "paper"
@@ -88,10 +121,10 @@ scissorsBtn.addEventListener("click", function(){
     }
 })
 
-let score = 0
 
 function won(){
     score += 1
+    rounds += 1
     document.getElementById("score-display").textContent = score
     document.getElementById("result-display").textContent = "You Won"
     document.getElementById("player").classList.add("win")
@@ -100,8 +133,10 @@ function won(){
     document.getElementById("bot").classList.remove("win")
     document.getElementById("bot").classList.remove("draw")
     document.getElementById("player").classList.remove("draw")
+    checkScore()
 }
 function lost(){
+    rounds += 1
     document.getElementById("score-display").textContent = score
     document.getElementById("result-display").textContent = "You Lost"
     document.getElementById("player").classList.add("lose")
@@ -120,7 +155,15 @@ function draw(){
 }
 
 
+document.getElementById("next-round").addEventListener("click", function(){
+    document.querySelector(".main-game").classList.remove("inactive")
+    document.querySelector(".game-results").classList.add("inactive")
+})
 document.getElementById("restart").addEventListener("click", function(){
     document.querySelector(".main-game").classList.remove("inactive")
     document.querySelector(".game-results").classList.add("inactive")
+    document.querySelector(".luck-modal").classList.add("inactive")
+    score = 0
+    rounds = 0
+    document.getElementById("score-display").textContent = score
 })
